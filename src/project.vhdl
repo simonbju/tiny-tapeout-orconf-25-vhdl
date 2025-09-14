@@ -18,7 +18,7 @@ end tt_um_pe_simonbju;
 architecture Behavioral of tt_um_pe_simonbju is
     signal a, b : unsigned(3 downto 0);
     signal op : std_logic_vector(2 downto 0);
-    signal result : unsigned(4 downto 0);
+    signal r : unsigned(4 downto 0);
 begin
 
     a <= unsigned(ui_in(3 downto 0));
@@ -26,7 +26,7 @@ begin
     op <= uio_in(1 downto 0);
 
     with op select
-        result <=
+        r <=
             a + b when "000",
             a - b when "001",
             a and b when "010",
@@ -35,7 +35,7 @@ begin
             not a when "101",
             (others => '0') when others;
 
-    uo_out <= std_logic_vector(result) & "000";
+    uo_out <= "000" & std_logic_vector(r);
     uio_out <= (others => '0');
     uio_oe <= (others => '0');
 
