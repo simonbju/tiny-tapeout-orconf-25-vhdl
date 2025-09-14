@@ -47,7 +47,7 @@ pinout:
   # Bidirectional pins
   uio[0]: "op[0]"
   uio[1]: "op[1]"
-  uio[2]: ""
+  uio[2]: "op[2]"
   uio[3]: ""
   uio[4]: ""
   uio[5]: ""
